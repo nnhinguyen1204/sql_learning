@@ -2,6 +2,19 @@
 -- Topics: COUNT, SUM, AVG; GROUP BY, HAVING 
 -- Data source: Superstore from Kaggle, using Bigquey to code
 
+-- Advanced version:
+SELECT
+  region,
+  category,
+  COUNT(*)                                  AS order_lines,
+  ROUND(SUM(sales), 2)                      AS total_sales,
+  ROUND(SUM(profit), 2)                     AS total_profit,
+  ROUND(SUM(profit) / SUM(sales) * 100, 1)  AS profit_margin_pct
+FROM `week-1-sql-511717.Sample_superstore_kaggle.superstore`
+GROUP BY region, category
+ORDER BY region, total_sales DESC;
+
+-- Simple version:
 select region, sum(sales) as total_sales_per_region
 from week-1-sql-511717.Sample_superstore_kaggle.superstore
 group by region;
