@@ -1,4 +1,6 @@
-
+-- Question: Find the region and category that lost money
+-- Topics: COUNT, SUM, AVG; GROUP BY, HAVING 
+-- Data source: Superstore from Kaggle, using Bigquey to code
 
 select region, category,
        round(sum(sales), 2) as total_sales,
