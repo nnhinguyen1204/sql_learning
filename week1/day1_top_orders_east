@@ -1,0 +1,12 @@
+-- Question: Top 20 orders in one region
+-- Topics: SELECT, WHERE, ORDER BY, LIMIT, DISTINCT
+-- Data source: Superstore from Kaggle, using Bigquery to code
+
+select distinct region
+from `week-1-sql-511717.Sample_superstore_kaggle.superstore`;
+
+select order_id, product_name, region, sales, profit
+from week-1-sql-511717.Sample_superstore_kaggle.superstore
+where region = 'East'
+order by sales DESC
+limit 20;
