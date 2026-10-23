@@ -1,0 +1,10 @@
+-- Question: find customers with no purchases
+-- Topics: Join
+-- Data source: Chinook from Kaggle in Bigquery 
+-- Answer is "there is no data to display"
+
+SELECT c.customerid, i.invoiceid
+FROM week-1-sql-511717.chinook_kaggle.customer AS c
+LEFT JOIN week-1-sql-511717.chinook_kaggle.invoice AS i
+     ON c.customerid = i.customerid
+WHERE i.invoiceid IS NULL;
