@@ -1,6 +1,6 @@
 -- Question: find customers with no purchases
 -- Topics: Join
--- Data source: Chinook from Kaggle in Bigquery 
+-- Data source: Chinook from Kaggle, using Bigquery to code
 -- Answer is "there is no data to display"
 
 SELECT c.customerid, i.invoiceid
